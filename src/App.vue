@@ -14,10 +14,10 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app clipped-left flat>
+    <v-app-bar app clipped-left flat color="primary" dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>My files</v-toolbar-title>
+      <v-toolbar-title>ProSequo</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -25,13 +25,9 @@
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
 
-      <v-btn icon>
-        <v-icon>mdi-filter</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
+      <v-avatar size="36px">
+        <img alt="Avatar" src="http://info-sa/sa-personnel/photos/cdrr.jpg">
+      </v-avatar>
     </v-app-bar>
 
     <!-- Sizes your content based upon application components -->
@@ -56,9 +52,11 @@ export default {
   data: () => ({
     drawer: true,
     navItems: [
-      { title: "Dashboard", icon: "mdi-view-dashboard" },
-      { title: "Photos", icon: "mdi-image" },
-      { title: "About", icon: "mdi-help-box" },
+      { title: "Tableau de bord", icon: "mdi-view-dashboard" },
+      { title: "Liste des projets", icon: "mdi-format-list-bulleted-type" },
+      { title: "Mes collection", icon: "mdi-bookmark-multiple-outline" },
+      { title: "Paramètres", icon: "mdi-cog" },
+      { title: "Editeur Check-listes", icon: "mdi-order-bool-ascending-variant" },
     ],
   }),
 };
