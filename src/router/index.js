@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import ProjetView from '../views/ProjetView.vue'
 import ProjetsView from '../views/ProjetsView.vue'
 
 Vue.use(VueRouter)
@@ -9,18 +9,18 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: ProjetView
   },
   {
     path: '/projets',
     name: 'projets',
     component: ProjetsView,
-    meta: { breadcrumb: 'Liste de projets' }
+    meta: { breadcrumb: 'Projets' }
   },
   {
     path: '/projets/:id',
     name: 'projets',
-    component: HomeView,
+    component: ProjetView,
     meta: { breadcrumb: ':id' }
   },
   {

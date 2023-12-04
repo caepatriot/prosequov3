@@ -1,20 +1,20 @@
 <template>
   <div>
     <breadcrumbs-component />
-    <hello-world />
+    <projet-card-component />
   </div>
 </template>
 
 <script>
 import BreadcrumbsComponent from '../components/BreadcrumbsComponent.vue'
-import HelloWorld from '../components/HelloWorld'
+import ProjetCardComponent from '../components/ProjetCardComponent.vue'
 
 export default {
-  name: 'HomeView',
+  name: 'ProjetView',
 
   components: {
     BreadcrumbsComponent,
-    HelloWorld
+    ProjetCardComponent
   },
 }
 </script>
