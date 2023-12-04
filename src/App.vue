@@ -2,7 +2,7 @@
   <v-app>
     <v-navigation-drawer app clipped v-model="drawer">
       <v-list dense nav>
-        <v-list-item v-for="item in navItems" :key="item.title" link>
+        <v-list-item v-for="item in navItems" :key="item.title" :to="item.link" link>
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -45,6 +45,21 @@
   </v-app>
 </template>
 
+<style scoped>
+.nav-opener-container {
+  position: relative;
+}
+
+.nav-opener {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: grey;
+  height: 15px;
+  width: 5px;
+}
+</style>
+
 <script>
 export default {
   name: "App",
@@ -52,11 +67,11 @@ export default {
   data: () => ({
     drawer: true,
     navItems: [
-      { title: "Tableau de bord", icon: "mdi-view-dashboard" },
-      { title: "Liste des projets", icon: "mdi-format-list-bulleted-type" },
-      { title: "Mes collection", icon: "mdi-bookmark-multiple-outline" },
-      { title: "Paramètres", icon: "mdi-cog" },
-      { title: "Editeur Check-listes", icon: "mdi-order-bool-ascending-variant" },
+      { title: "Tableau de bord", icon: "mdi-view-dashboard", link: "/accueil" },
+      { title: "Liste des projets", icon: "mdi-format-list-bulleted-type", link: "/projets" },
+      { title: "Mes collection", icon: "mdi-bookmark-multiple-outline", link: "/collections" },
+      { title: "Paramètres", icon: "mdi-cog", link: "/parametres" },
+      { title: "Editeur Check-listes", icon: "mdi-order-bool-ascending-variant", link: "/checklistes" },
     ],
   }),
 };

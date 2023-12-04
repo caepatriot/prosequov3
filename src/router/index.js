@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import ProjetsView from '../views/ProjetsView.vue'
 
 Vue.use(VueRouter)
 
@@ -9,6 +10,18 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/projets',
+    name: 'projets',
+    component: ProjetsView,
+    meta: { breadcrumb: 'Liste de projets' }
+  },
+  {
+    path: '/projets/:id',
+    name: 'projets',
+    component: HomeView,
+    meta: { breadcrumb: ':id' }
   },
   {
     path: '/about',
@@ -21,7 +34,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode: 'history',
 })
 
 export default router
