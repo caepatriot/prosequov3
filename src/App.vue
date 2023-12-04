@@ -21,9 +21,9 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
+      <!-- <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
-      </v-btn>
+      </v-btn> -->
 
       <v-avatar size="36px">
         <img alt="Avatar" src="http://info-sa/sa-personnel/photos/cdrr.jpg">
@@ -40,7 +40,7 @@
     </v-main>
 
     <v-footer app>
-      <span>lol</span>
+      <span>Footer</span>
     </v-footer>
   </v-app>
 </template>
