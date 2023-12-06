@@ -14,24 +14,20 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app clipped-left flat>
+    <v-app-bar app clipped-left flat color="primary" dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>My files</v-toolbar-title>
+      <v-toolbar-title>ProSequo</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
+      <!-- <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
-      </v-btn>
+      </v-btn> -->
 
-      <v-btn icon>
-        <v-icon>mdi-filter</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
+      <v-avatar size="36px">
+        <img alt="Avatar" src="http://info-sa/sa-personnel/photos/cdrr.jpg">
+      </v-avatar>
     </v-app-bar>
 
     <!-- Sizes your content based upon application components -->
@@ -44,10 +40,25 @@
     </v-main>
 
     <v-footer app>
-      <span>lol</span>
+      <span>Footer</span>
     </v-footer>
   </v-app>
 </template>
+
+<style scoped>
+.nav-opener-container {
+  position: relative;
+}
+
+.nav-opener {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: grey;
+  height: 15px;
+  width: 5px;
+}
+</style>
 
 <script>
 export default {
