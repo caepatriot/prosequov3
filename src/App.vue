@@ -2,7 +2,7 @@
   <v-app>
     <v-navigation-drawer app clipped v-model="drawer">
       <v-list dense nav>
-        <v-list-item v-for="item in navItems" :key="item.title" link>
+        <v-list-item v-for="item in navItems" :key="item.title" :to="item.link" link>
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -54,11 +54,11 @@ export default {
   name: "App",
 
   data: () => ({
-    drawer: true,
+    drawer: false,
     navItems: [
-      { title: "Dashboard", icon: "mdi-view-dashboard" },
-      { title: "Photos", icon: "mdi-image" },
-      { title: "About", icon: "mdi-help-box" },
+      { title: "Dashboard", icon: "mdi-view-dashboard", link:"/dashboard" },
+      { title: "Photos", icon: "mdi-image", link:"" },
+      { title: "About", icon: "mdi-help-box", link:"" },
     ],
   }),
 };
