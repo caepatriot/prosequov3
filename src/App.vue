@@ -21,13 +21,21 @@
 
       <v-spacer></v-spacer>
 
-      <!-- <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn> -->
 
-      <v-avatar size="36px">
-        <img alt="Avatar" src="http://info-sa/sa-personnel/photos/cdrr.jpg">
-      </v-avatar>
+      <v-menu offset-y>
+        <template v-slot:activator="{ on, attrs }">
+          <v-avatar size="36px" v-bind="attrs" v-on="on">
+            <img alt="Avatar" src="http://info-sa/sa-personnel/photos/cdrr.jpg">
+          </v-avatar>
+        </template>
+        <!-- <v-list>
+          <v-list-item v-for="(item, index) in items" :key="index">
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list> -->
+      </v-menu>
+
+
     </v-app-bar>
 
     <!-- Sizes your content based upon application components -->
@@ -67,9 +75,9 @@ export default {
   data: () => ({
     drawer: false,
     navItems: [
-      { title: "Dashboard", icon: "mdi-view-dashboard", link:"/dashboard" },
-      { title: "Photos", icon: "mdi-image", link:"" },
-      { title: "About", icon: "mdi-help-box", link:"" },
+      { title: "Dashboard", icon: "mdi-view-dashboard", link: "/dashboard" },
+      { title: "Photos", icon: "mdi-image", link: "" },
+      { title: "About", icon: "mdi-help-box", link: "" },
     ],
   }),
 };

@@ -1,105 +1,86 @@
 <template>
-  <v-container fluid>
-    <v-row dense>
-      <v-col cols="3">
-        <v-card class="mx-auto">
-          <v-card-title> Top western road trips </v-card-title>
+  <v-container fluid class="fill-height">
+    <v-row class="fill-height">
+      <v-col>
+        <v-row>
+          <v-col cols="3">
+            <ProjetsInfoWidget title="Test" />
+          </v-col>
+          <v-col cols="3">
+            <ProjetsInfoWidget title="Test 2"/>
+          </v-col>
+          <v-col cols="3">
+            <ProjetsInfoWidget title="Test 3"/>
+          </v-col>
+          <v-col cols="3">
+            <ProjetsInfoWidget title="Test 4"/>
+          </v-col>
+        </v-row>
+        <v-row dense>
+          <v-col cols="auto">
+            <v-card class="mx-auto fill-height">
+              <!-- <v-card-title> Mes </v-card-title> -->
 
-          <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
+              <!-- <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
 
-          <v-expand-transition>
-          </v-expand-transition>
-        </v-card>
+              <v-list subheader>
+                <v-subheader>Mes subordonnés</v-subheader>
+                <v-list-item v-for="item in items" :key="item.title">
+                  <!-- <v-list-item-icon>
+                <v-icon v-if="item.icon" color="pink">
+                  mdi-star
+                </v-icon>
+              </v-list-item-icon> -->
+
+                  <v-list-item-avatar>
+                    <v-img :src="item.avatar"></v-img>
+                  </v-list-item-avatar>
+
+                  <v-list-item-content>
+                    <v-list-item-title v-text="item.title"></v-list-item-title>
+                  </v-list-item-content>
+
+
+                </v-list-item>
+              </v-list>
+            </v-card>
+          </v-col>
+          <v-col>
+            <ListeProjets />
+          </v-col>
+        </v-row>
       </v-col>
-      <v-col cols="3">
-        <v-card class="mx-auto">
-          <v-card-title> Top western road trips </v-card-title>
-
-          <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
-
-          <v-expand-transition>
-          </v-expand-transition>
-        </v-card>
-      </v-col>
-      <v-col cols="3">
-        <v-card class="mx-auto">
-          <v-card-title> Top western road trips </v-card-title>
-
-          <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
-
-          <v-expand-transition>
-          </v-expand-transition>
-        </v-card></v-col
-      >
-      <v-col cols="3">
-        <v-card class="mx-auto">
-          <v-card-title> Top western road trips </v-card-title>
-
-          <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
-
-          <v-expand-transition>
-          </v-expand-transition>
-        </v-card></v-col
-      >
     </v-row>
-    <v-row dense>
-      <v-col> </v-col>
-    </v-row>
-
-    <v-card class="mx-auto">
-      <v-simple-table>
-        <template v-slot:default>
-          <thead>
-            <tr>
-              <th>Code</th>
-              <th>Projet</th>
-              <th>Indicateurs</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              v-for="projet in projets"
-              :key="projet.code"
-              @click="goToProjet(projet.code)"
-            >
-              <td>{{ projet.code }}</td>
-              <td>{{ projet.mission }}</td>
-              <td>{{ projet.place }}</td>
-            </tr>
-          </tbody>
-        </template>
-      </v-simple-table>
-    </v-card>
   </v-container>
 </template>
 
 <script>
-import axios from "axios";
+import ListeProjets from '@/components/projet/ListeProjets'
+import ProjetsInfoWidget from '@/components/widgets/ProjetsInfoWidget'
 
 export default {
   name: "DashboardView",
 
-  components: {},
+  components: {
+    ListeProjets,
+    ProjetsInfoWidget
+  },
 
   data() {
     return {
-      projets: null,
+      items: [
+        { icon: true, title: 'Jason Oner', avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
+        { title: 'Travis Howard', avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' },
+        { title: 'Ali Connors', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' },
+        { title: 'Cindy Baker', avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg' },
+      ],
     };
   },
 
   mounted() {
-    axios
-      .get("http://localhost:8081/api/projects")
-      .then((response) => (this.projets = response.data))
-      .catch((error) => {
-        console.log(error.code);
-      });
   },
 
   methods: {
-    goToProjet(code) {
-      this.$router.push({ name: "Projet", params: { code: code } });
-    },
   },
 };
 </script>
