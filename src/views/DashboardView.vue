@@ -18,24 +18,27 @@
         </v-row>
         <v-row dense>
           <v-col cols="auto">
-            <v-card class="mx-auto fill-height">
-              <!-- <v-card-title> Mes </v-card-title> -->
+            <v-card class="mx-auto fill-height" width="100%">
 
-              <!-- <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
-
-              <v-list subheader>
-                <v-subheader>Mes subordonnés</v-subheader>
-                <v-list-item v-for="item in items" :key="item.title">
-
-                  <v-list-item-avatar>
-                    <v-img :src="item.avatar"></v-img>
-                  </v-list-item-avatar>
-
+              <v-list dense nav>
+                <v-list-item>
                   <v-list-item-content>
-                    <v-list-item-title v-text="item.title"></v-list-item-title>
+                    <v-list-item-title>Mes projets</v-list-item-title>
                   </v-list-item-content>
-
                 </v-list-item>
+                <v-list-group v-for="item in lists" :key="item.title" v-model="item.active" :prepend-icon="item.action">
+                  <template v-slot:activator>
+                    <v-list-item-content>
+                      <v-list-item-title v-text="item.title"></v-list-item-title>
+                    </v-list-item-content>
+                  </template>
+
+                  <v-list-item v-for="child in item.lists" :key="child.title">
+                    <v-list-item-content>
+                      <v-list-item-title v-text="child.title"></v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                </v-list-group>
               </v-list>
             </v-card>
           </v-col>
@@ -62,11 +65,24 @@ export default {
 
   data() {
     return {
-      items: [
-        { icon: true, title: 'Claude Ribeiro', avatar: 'http://info-sa/sa-personnel/photos/cdrr.jpg' },
-        { title: 'Damien Fache', avatar: 'http://info-sa/sa-personnel/photos/damfac.jpg' },
-        { title: 'Antonio Matias', avatar: 'http://info-sa/sa-personnel/photos/anma.jpg' },
-        { title: 'Sofiane Qartit', avatar: 'http://info-sa/sa-personnel/photos/soqa.jpg' },
+      lists: [
+        {
+          title: "Mes listes personnalisées",
+          lists: [
+            { title: 'Liste 1', avatar: 'http://info-sa/sa-personnel/photos/damfac.jpg' },
+            { title: 'Liste 2022', avatar: 'http://info-sa/sa-personnel/photos/anma.jpg' },
+            { title: 'Ma liste parfaite', avatar: 'http://info-sa/sa-personnel/photos/soqa.jpg' },
+          ]
+        },
+        {
+          title: "Mes Subordonnées",
+          lists: [
+            { title: 'Damien Fache', avatar: 'http://info-sa/sa-personnel/photos/damfac.jpg' },
+            { title: 'Antonio Matias', avatar: 'http://info-sa/sa-personnel/photos/anma.jpg' },
+            { title: 'Sofiane Qartit', avatar: 'http://info-sa/sa-personnel/photos/soqa.jpg' },
+          ]
+        },
+
       ],
     };
   },
