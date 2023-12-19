@@ -7,13 +7,13 @@
             <ProjetsInfoWidget title="Test" />
           </v-col>
           <v-col cols="3">
-            <ProjetsInfoWidget title="Test 2"/>
+            <ProjetsInfoWidget title="Test 2" />
           </v-col>
           <v-col cols="3">
-            <ProjetsInfoWidget title="Test 3"/>
+            <ProjetsInfoWidget title="Test 3" />
           </v-col>
           <v-col cols="3">
-            <ProjetsInfoWidget title="Test 4"/>
+            <ProjetsInfoWidget title="Test 4" />
           </v-col>
         </v-row>
         <v-row dense>
@@ -26,11 +26,6 @@
               <v-list subheader>
                 <v-subheader>Mes subordonnés</v-subheader>
                 <v-list-item v-for="item in items" :key="item.title">
-                  <!-- <v-list-item-icon>
-                <v-icon v-if="item.icon" color="pink">
-                  mdi-star
-                </v-icon>
-              </v-list-item-icon> -->
 
                   <v-list-item-avatar>
                     <v-img :src="item.avatar"></v-img>
@@ -39,7 +34,6 @@
                   <v-list-item-content>
                     <v-list-item-title v-text="item.title"></v-list-item-title>
                   </v-list-item-content>
-
 
                 </v-list-item>
               </v-list>
@@ -69,10 +63,10 @@ export default {
   data() {
     return {
       items: [
-        { icon: true, title: 'Jason Oner', avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg' },
-        { title: 'Travis Howard', avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' },
-        { title: 'Ali Connors', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' },
-        { title: 'Cindy Baker', avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg' },
+        { icon: true, title: 'Claude Ribeiro', avatar: 'http://info-sa/sa-personnel/photos/cdrr.jpg' },
+        { title: 'Damien Fache', avatar: 'http://info-sa/sa-personnel/photos/damfac.jpg' },
+        { title: 'Antonio Matias', avatar: 'http://info-sa/sa-personnel/photos/anma.jpg' },
+        { title: 'Sofiane Qartit', avatar: 'http://info-sa/sa-personnel/photos/soqa.jpg' },
       ],
     };
   },
