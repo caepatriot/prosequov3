@@ -54,6 +54,9 @@
 </template>
 
 <style scoped>
+.v-main{
+  background-color: rgb(237, 237, 237);
+}
 .nav-opener-container {
   position: relative;
 }
