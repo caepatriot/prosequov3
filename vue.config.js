@@ -6,5 +6,5 @@ module.exports = defineConfig({
   devServer: {
     allowedHosts: 'all'
   },
-  publicPath: process.env.NODE_ENV === "production" ? "/caepatriot/prosequov3/" : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/prosequov3/" : "/",
 })
