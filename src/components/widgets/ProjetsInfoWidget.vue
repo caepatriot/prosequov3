@@ -2,7 +2,7 @@
   <v-card class="mx-auto">
     <v-card-title> {{ title }} </v-card-title>
 
-    <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
+    <v-card-subtitle> Test </v-card-subtitle>
 
     <v-expand-transition>
     </v-expand-transition>
