@@ -44,6 +44,12 @@ export default {
       .get("http://localhost:8085/api/projets")
       .then((response) => (this.projets = response.data))
       .catch((error) => {
+        this.projets.push({
+          code: '20020',
+          objet: 'SCHROEDER 2020',
+          lieu: 'LUXITE',
+          tri: 1
+        })
         console.log(error.code);
       });
   },
