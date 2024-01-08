@@ -3,7 +3,7 @@
     <v-card-title>
       <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line hide-details></v-text-field>
     </v-card-title>
-    <v-data-table :headers="headers" :items="projets" :sort-by="['tri']" :sort-desc="[true]" :search="search"
+    <v-data-table height="100%" :headers="headers" :items="projets" :sort-by="['tri']" :sort-desc="[true]" :search="search"
       @click:row="goToProjet"></v-data-table>
   </v-card>
 </template>
