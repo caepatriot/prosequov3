@@ -60,7 +60,6 @@ export default {
 
   methods: {
     goToProjet(row) {
-      console.log(row.code);
       this.$router.push({ name: "Projet", params: { code: row.code } });
     },
   },

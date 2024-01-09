@@ -14,7 +14,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app clipped-left flat color="primary" dark>
+    <v-app-bar app clipped-left flat color="#000F9F" dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>ProSequo</v-toolbar-title>
