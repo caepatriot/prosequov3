@@ -15,9 +15,11 @@
     </v-navigation-drawer>
 
     <v-app-bar app clipped-left flat color="#000F9F" dark>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon class="ml-0" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>ProSequo</v-toolbar-title>
+      <v-toolbar-title>
+        <v-img src="@/assets/logo_sa_prosequo_white.png" max-width="100px"></v-img>
+      </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -78,9 +80,10 @@ export default {
   data: () => ({
     drawer: false,
     navItems: [
-      { title: "Dashboard", icon: "mdi-view-dashboard", link: "/dashboard" },
-      { title: "Photos", icon: "mdi-image", link: "" },
-      { title: "About", icon: "mdi-help-box", link: "" },
+      { title: "Tableau de bord", icon: "mdi-view-dashboard", link: "/dashboard" },
+      { title: "Mes collections", icon: "mdi-image", link: "" },
+      { title: "Paramètres", icon: "mdi-cog", link: "" },
+      { title: "Editeur Checklists", icon: "mdi-order-bool-ascending-variant", link: "" },
     ],
   }),
 };
