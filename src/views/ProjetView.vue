@@ -28,19 +28,17 @@
         <v-tabs v-model="tab" align-with-title>
           <v-tabs-slider color="#000F9F"></v-tabs-slider>
 
-          <v-tab v-for="item in items" :key="item">
-            {{ item }}
+          <v-tab v-for="item in items" :key="item.title">
+            {{ item.title }}
           </v-tab>
         </v-tabs>
       </template>
     </v-toolbar>
 
     <v-tabs-items v-model="tab" grow>
-      <v-tab-item v-for="item in items" :key="item">
+      <v-tab-item v-for="item in items" :key="item.title">
         <v-card flat>
-          <!-- <v-card-text v-text="text">
-          </v-card-text> -->
-          <v-img class="ma-10" lazy-src="https://picsum.photos/id/11/10/6" src="@/assets/calendrier.png"></v-img>
+          <v-img class="ma-10" :src="require(`@/assets/${item.content}`)"></v-img>
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -72,9 +70,23 @@ export default {
     ],
     tab: null,
     items: [
-      'Processus', 'Calendrier', 'Données d\'entrées', 'Journal',
+      {
+        title: 'Processus',
+        content: 'screenshots/processus.png'
+      },
+      {
+        title: 'Calendrier',
+        content: 'screenshots/calendrier.png'
+      },
+      {
+        title: 'Données d\'entrées',
+        content: 'screenshots/donnees.png'
+      },
+      {
+        title: 'Journal',
+        content: 'screenshots/journal.png'
+      },
     ],
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   })
 }
 </script>
