@@ -1,16 +1,14 @@
 <template>
   <v-card>
     <v-card-title>
-      <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line hide-details></v-text-field>
+      <v-text-field v-model="search" append-icon="mdi-magnify" label="Recherche" single-line hide-details></v-text-field>
     </v-card-title>
-    <v-data-table height="100%" :headers="headers" :items="projets" :sort-by="['tri']" :sort-desc="[true]" :search="search"
-      @click:row="goToProjet"></v-data-table>
+    <v-data-table height="100%" :headers="headers" :items="projets" :sort-by="['tri']" :sort-desc="[true]"
+      :search="search" @click:row="goToProjet"></v-data-table>
   </v-card>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
 
 <script>
 import axios from "axios";
@@ -60,7 +58,14 @@ export default {
 
   methods: {
     goToProjet(row) {
-      this.$router.push({ name: "Projet", params: { code: row.code } });
+      this.$router.push({
+        name: "Projet", params: {
+          code: row.code,
+          objet: row.objet,
+          lieu: row.lieu,
+          tri: row.tri
+        }
+      });
     },
   },
 };
