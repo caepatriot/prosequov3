@@ -38,7 +38,8 @@
     <v-tabs-items v-model="tab" grow>
       <v-tab-item v-for="item in items" :key="item.title">
         <v-card flat>
-          <v-img class="ma-10" :src="require(`@/assets/${item.content}`)"></v-img>
+          <v-img v-if="item.content" class="ma-10" :src="require(`@/assets/${item.content}`)"></v-img>
+          <component :is="item.component"></component>
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -56,11 +57,12 @@ h3 {
 </style>
 
 <script>
+import ProcessusNavComponent from '@/components/ProcessusNavComponent'
 export default {
   name: 'ProjetView',
 
   components: {
-
+    ProcessusNavComponent
   },
 
   data: () => ({
@@ -72,7 +74,8 @@ export default {
     items: [
       {
         title: 'Processus',
-        content: 'screenshots/processus.png'
+        component: 'ProcessusNavComponent',
+        content: ''
       },
       {
         title: 'Calendrier',
