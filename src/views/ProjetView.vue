@@ -10,9 +10,9 @@
 
       <v-spacer></v-spacer>
 
-      <v-menu bottom left>
+      <v-menu bottom left offset-y>
         <template v-slot:activator="{ on, attrs }">
-          <v-btn dark icon v-bind="attrs" v-on="on">
+          <v-btn light icon v-bind="attrs" v-on="on">
             <v-icon>mdi-dots-vertical</v-icon>
           </v-btn>
         </template>
